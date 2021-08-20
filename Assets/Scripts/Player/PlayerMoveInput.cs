@@ -15,6 +15,7 @@ public class PlayerMoveInput : MonoBehaviour
     {
         Vector2 inputMovement = value.ReadValue<Vector2>();
         ActionScript.Move(inputMovement);
+        
         //player.SendMessage("Move", inputMovement, SendMessageOptions.DontRequireReceiver);
     }
 
