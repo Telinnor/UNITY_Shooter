@@ -22,7 +22,6 @@ public class PlayerMoveInput : MonoBehaviour
     public void OnLooking(InputAction.CallbackContext value)
     {
         Vector2 inputLooking = value.ReadValue<Vector2>();
-
         ActionScript.LookingAround(inputLooking);
         //player.SendMessage("LookingAround",inputLooking, SendMessageOptions.DontRequireReceiver);
     }
