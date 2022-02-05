@@ -295,7 +295,7 @@ RectTransform:
   - {fileID: 588990352}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.138, y: 0.041, z: 0.034}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -337,7 +337,9 @@ MonoBehaviour:
   bullet: {fileID: 8722132530715784968, guid: 1664bd5d476c70c44a4852413a005293, type: 3}
   MovingMethod: 2
   Gravity: 40
-  JumpStrength: 20
+  JumpStrength: 12
+  myCamera: {fileID: 1227770434}
+  ScopeStrength: 0.5
 --- !u!114 &363872358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,6 +469,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7d1c1c86-ee9c-4d20-b72a-351427c665a8
     m_ActionName: Player/Height[/Keyboard/shift,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 363872356}
+        m_TargetAssemblyTypeName: PlayerMoveInput, Assembly-CSharp
+        m_MethodName: GetInScope
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5a02b347-2786-4bc0-9427-c9913b4d8cec
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -490,7 +508,7 @@ MonoBehaviour:
   - {fileID: 1919012471076396, guid: 55776efecb0cd134ea5f418c2f97a705, type: 3}
   - {fileID: 1837317425425208, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
   - {fileID: 1774625739149480, guid: 38efdaadbfe1d624bbee439cb02e7661, type: 3}
-  NumberOfEnemys: 5
+  NumberOfEnemys: 0
   EnemyDistance: 50
 --- !u!143 &363872362
 CharacterController:
@@ -544,7 +562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -152, y: 75.8}
+  m_AnchoredPosition: {x: -154, y: 76.4}
   m_SizeDelta: {x: 1024, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588990353
@@ -560,7 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20221877, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -907,7 +925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3640657033418940432, guid: e0d5236e069de7d418c2c74a734d2e54, type: 3}
       propertyPath: field of view
-      value: 26.991467
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 3640657033418940432, guid: e0d5236e069de7d418c2c74a734d2e54, type: 3}
       propertyPath: m_projectionMatrixMode
@@ -919,6 +937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0d5236e069de7d418c2c74a734d2e54, type: 3}
+--- !u!20 &1227770434 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3640657033418940432, guid: e0d5236e069de7d418c2c74a734d2e54, type: 3}
+  m_PrefabInstance: {fileID: 1221163178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1275482774
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,6 +43,15 @@ public class PlayerMoveInput : MonoBehaviour
             ActionScript.Shoot();
         }
     }
+
+    public void GetInScope(InputAction.CallbackContext value){
+        if (value.started)
+        {
+            ActionScript.GetInScope(1);
+        }else if(value.canceled){
+            ActionScript.GetInScope(2);
+        }
+    }
     void DebugValue(InputAction.CallbackContext value)
     {
         Debug.Log(value.started);

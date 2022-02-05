@@ -15,6 +15,9 @@ public class PlayerAction : MonoBehaviour
     public MovingMethodType MovingMethod;
     public float Gravity;
     public float JumpStrength;
+    public Camera myCamera;
+    public float ScopeStrength;
+
 
     //PRIVATE VARIABLES:
     private CharacterController _characterController;
@@ -64,6 +67,17 @@ public class PlayerAction : MonoBehaviour
         LookingInputData = new Vector3(-value.y, value.x, 0);
     }
 
+    private float currentFOV;
+    public void GetInScope(int value){ 
+        if(value==1){   //1 = Get in Scope
+            currentFOV=myCamera.fieldOfView;
+            myCamera.fieldOfView = currentFOV * ScopeStrength;
+            Debug.Log("Get in Scope");
+        }else if (value==2){ //2 = Get out of Scope
+            myCamera.fieldOfView = currentFOV;
+            Debug.Log("Get out of Scope");
+        }
+    }
     public void Jump(float value)
     {
         Debug.Log("Jump");
